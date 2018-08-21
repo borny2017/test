@@ -50,7 +50,23 @@ public class BeanStreamTest {
 		assertSame("wrong type", Transaction.GROCERY, afterStreamList.get(0).getType());
 		assertSame("wrong type", Transaction.GROCERY, afterStreamList.get(1).getType());
     }
-
+	
+	@Test
+    void limitMethod() {
+		Stream<TransactionBean> transactionBeanStream = transactions.stream().limit(2);
+		List<TransactionBean> afterStreamList = transactionBeanStream.peek(System.out::println).collect(Collectors.toCollection(ArrayList::new));
+		assertSame("wrong type", 2, afterStreamList.size());
+    }
+	
+	@Test
+    void skipMethod() {
+		// Überspringt 2 Datensaetze
+		Stream<TransactionBean> transactionBeanStream = transactions.stream().skip(1);
+		List<TransactionBean> afterStreamList = transactionBeanStream.peek(System.out::println).collect(Collectors.toCollection(ArrayList::new));
+		// 1 Datensatz ist noch uebrig
+		assertSame("wrong type", 1, afterStreamList.size());
+    }
+	
 	@Test
     void convertStreamBean2ListMethod() {
 		Stream<TransactionBean> transactionBeanStream = transactions.stream();
