@@ -1,7 +1,6 @@
 package de.test.java8.stream;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 
 import java.util.ArrayList;
 import java.util.OptionalDouble;
