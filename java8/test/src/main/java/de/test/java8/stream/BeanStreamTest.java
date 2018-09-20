@@ -35,6 +35,11 @@ public class BeanStreamTest {
 		transactions.add(transactionBean1);
     }
 
+	/**
+	 * Multi-Filter 
+	 * 1. Filter TransactionBean.type == Transaction.GROCERY
+	 * 2. Filter TransactionBean.value == "r3"
+	 */
 	@Test
     void multiLevelFilter() {
 		Stream<TransactionBean> transactionBeanStream = transactions.stream().filter(t -> t.getType() == Transaction.GROCERY).filter(t -> "r3".equals(t.getValue()));
@@ -43,6 +48,10 @@ public class BeanStreamTest {
 		assertSame("wrong value", "r3", afterStreamList.get(0).getValue());
     }
 	
+	/**
+	 * Single Filter 
+	 * Filter TransactionBean.type == Transaction.GROCERY
+	 */
 	@Test
     void filterMethod() {
 		Stream<TransactionBean> transactionBeanStream = transactions.stream().filter(t -> t.getType() == Transaction.GROCERY);
@@ -51,6 +60,9 @@ public class BeanStreamTest {
 		assertSame("wrong type", Transaction.GROCERY, afterStreamList.get(1).getType());
     }
 	
+	/**
+	 * Limits the original stream (3 items ) to a list with 2 items
+	 */
 	@Test
     void limitMethod() {
 		Stream<TransactionBean> transactionBeanStream = transactions.stream().limit(2);
@@ -58,6 +70,9 @@ public class BeanStreamTest {
 		assertSame("wrong type", 2, afterStreamList.size());
     }
 	
+	/**
+	 * Skips/remove the first item. 
+	 */
 	@Test
     void skipMethod() {
 		// Überspringt 2 Datensaetze
@@ -67,6 +82,9 @@ public class BeanStreamTest {
 		assertSame("wrong type", 1, afterStreamList.size());
     }
 	
+	/**
+	 * Converts a stream to a list.
+	 */
 	@Test
     void convertStreamBean2ListMethod() {
 		Stream<TransactionBean> transactionBeanStream = transactions.stream();
@@ -76,6 +94,9 @@ public class BeanStreamTest {
 		assertSame("wrong type", Transaction.GROCERY, afterStreamList.get(2).getType());
     }
 
+	/**
+	 * Converts a stream of beans to a String-Bean-map. 
+	 */
 	@Test
     void convertStreamBean2MapMethod() {
 		Stream<TransactionBean> transactionBeanStream = transactions.stream();
