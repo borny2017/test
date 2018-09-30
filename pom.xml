@@ -18,5 +18,6 @@
   </build>
   <modules>
   	<module>java8</module>
+  	<module>mockito</module>
   </modules>
 </project>
