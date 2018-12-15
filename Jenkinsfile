@@ -7,7 +7,7 @@ node {
       // Run the maven build
       bat 'mci_jenkins.bat'
  
-    } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe & FindBugs reports...
+     // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe & FindBugs reports...
     stage 'Deploy'
     echo 'Deploy'
 } 
