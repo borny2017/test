@@ -4,7 +4,7 @@ node {
     git url: 'https://github.com/borny2017/test'
     stage 'compile'
     echo "compile"
-    // sh "${mvnHome}/bin/mvn compile"
+    sh "${mvnHome}/bin/mvn compile"
     stage 'test'
     echo "Test"
     // sh "${mvnHome}/bin/mvn test"
