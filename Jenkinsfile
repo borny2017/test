@@ -18,4 +18,4 @@ node {
     } // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe & FindBugs reports...
     stage 'Deploy'
     echo 'Deploy'
-}
+} 
