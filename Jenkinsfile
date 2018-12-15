@@ -4,7 +4,8 @@ node {
     git url: 'https://github.com/borny2017/test'
     stage 'compile'
     echo "compile"
-	bat "mvn install"
+	bat "setenv8.bat"
+	bat "mci.bat"
     //sh "${mvnHome}/bin/mvn compile"
     stage 'test'
     echo "Test"
