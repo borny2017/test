@@ -19,6 +19,5 @@
   <modules>
   	<module>java8</module>
   	<module>mockito</module>
-  	<module></module>
 </modules>
 </project>
