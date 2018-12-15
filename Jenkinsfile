@@ -7,6 +7,11 @@ node {
       // Run the maven build
       bat 'mci_jenkins.bat'
 	  
+	  pom = readMavenPom file: 'pom.xml'
+	  pom.version
+	  
+	  echo ("pom.version: "+pom.version)
+	  
 	  def userInput = input(
 		  id: 'userInput', message: 'Let\'s promote?', parameters: [
 		  [$class: 'TextParameterDefinition', defaultValue: 'uat', description: 'Environment', name: 'env'],
