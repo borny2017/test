@@ -56,7 +56,8 @@
 				 <configuration>
           <source>1.8</source>
           <target>1.8</target>
-          <release>8</release>
+          <executable>C:\Development\seu\java\jdk1.8.0_191_64_Bit\bin\javac</executable>
+		<encoding>UTF-8</encoding>
         </configuration>
 			</plugin>
 		</plugins>
