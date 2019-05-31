@@ -3,6 +3,7 @@ package de.test.java8.stream;
 import static org.junit.Assert.assertSame;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -120,6 +121,16 @@ public class BeanStreamTest {
 		assertSame("wrong value", 3, afterStreamList.get(2).intValue());
 	}
 	
-	
+
+	/**
+	 * Convert a stream of beans to a stream of integer
+	 */
+	@Test
+	void mapLMethod() {
+		Map<String, List<TransactionBean>> postsPerType = transactions.stream()
+                .collect(Collectors.groupingBy(TransactionBean::getValue));
+		System.out.println(postsPerType);
+
+	}
 	
 }
