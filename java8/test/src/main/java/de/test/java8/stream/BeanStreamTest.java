@@ -3,12 +3,14 @@ package de.test.java8.stream;
 import static org.junit.Assert.assertSame;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.apache.commons.lang3.builder.MultilineRecursiveToStringStyle;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -129,7 +131,7 @@ public class BeanStreamTest {
 	void mapLMethod() {
 		Map<String, List<TransactionBean>> postsPerType = transactions.stream()
                 .collect(Collectors.groupingBy(TransactionBean::getValue));
-		System.out.println(postsPerType);
+		System.out.println(ToStringBuilder.reflectionToString(postsPerType, new MultilineRecursiveToStringStyle()));
 
 	}
 	
